@@ -1,7 +1,7 @@
 <template>
   <h3> Good Morning </h3>
   <Gretting :age="age"> </Gretting>
-  <user :age="age" @age-change="updateAge"> </user>
+  <user :age="age" @age-change="updateAge" :agechangefn="updateAgecb"> </user>
 </template>
 
 <script>
@@ -23,6 +23,9 @@ export default {
   } , 
   methods:{
     updateAge(num){
+      this.age += num
+    } , 
+    updateAgecb(num){
       this.age += num
     }
   }
