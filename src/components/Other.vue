@@ -8,7 +8,17 @@
 <script>
 export default {
     name: "User-vue" , 
-    props:["age"] , 
+    props:{
+        age:{
+            type:Number , 
+            // required: true
+            // default: 20
+            validator(value){
+                this.onclickage
+                return value < 130
+            }
+        }
+    }, 
     emits:['age-change'] ,
     computed:{
         ageDoubled(){ 
