@@ -1,7 +1,7 @@
 <template>
   <h3> Good Morning </h3>
-  <Gretting> </Gretting>
-  <user :age="age"> </user>
+  <Gretting :age="age"> </Gretting>
+  <user :age="age" @age-change="age++"> </user>
 </template>
 
 <script>
