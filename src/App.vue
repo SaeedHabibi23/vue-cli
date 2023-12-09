@@ -1,34 +1,33 @@
 <template>
-  <h3> Good Morning </h3>
-  <Gretting :age="age"> </Gretting>
-  <user :age="age" @age-change="updateAge" :agechangefn="updateAgecb"> </user>
+<FormVue> 
+  <form action="">
+   <div class="help">
+This is Some Help Text
+</div> 
+<div class="fields">
+    <input type="text" name="" id="" placeholder="Name">
+    <input type="email" name="" id="" placeholder="Email">
+    <input type="password" name="" id="" placeholder="Password">
+</div>
+   <div class="button">
+    <button type="submit"> Submit </button>
+   </div>
+    </form> 
+
+</FormVue>
+<FormVue> </FormVue>
 </template>
 
 <script>
-  import Gretting from "./components/Gretting.vue";
-  import User from "./components/Other.vue";
-
-export default {
-
-  name: 'App' , 
-  components: {
-    Gretting , 
-    User
-  } , 
-  data(){
-    return {
-      age:20
+import FormVue from "./components/form.vue"
+ export default {
+   name: 'App', 
+   components: {
+     FormVue 
     }
+  };
+   
 
-  } , 
-  methods:{
-    updateAge(num){
-      this.age += num
-    } , 
-    updateAgecb(num){
-      this.age += num
-    }
-  }
-}
+   
 </script>
  
