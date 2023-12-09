@@ -1,21 +1,32 @@
 <template>
 <FormVue> 
-  <form action="">
-   <div class="help">
+   <template v-slot:help>
 This is Some Help Text
-</div> 
-<div class="fields">
+</template> 
+<template v-slot:fields>
     <input type="text" name="" id="" placeholder="Name">
     <input type="email" name="" id="" placeholder="Email">
     <input type="password" name="" id="" placeholder="Password">
-</div>
-   <div class="button">
+</template>
+   <template v-slot:button>
     <button type="submit"> Submit </button>
-   </div>
-    </form> 
+   </template>
+
+   <p> DummyText </p>
 
 </FormVue>
-<FormVue> </FormVue>
+<FormVue>
+   <template v-slot:help>
+This is Some Contact Text
+</template> 
+<template v-slot:fields>
+    <input type="text" name="" id="" placeholder="Name">
+    <input type="email" name="" id="" placeholder="Email">
+</template>
+   <template v-slot:buttons>
+    <button type="submit"> Submit </button>
+   </template>
+  </FormVue>
 </template>
 
 <script>
