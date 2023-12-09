@@ -1,4 +1,5 @@
 <template>
+  <p> Good Morning </p>
   <Gretting> </Gretting>
 </template>
 

@@ -15,3 +15,9 @@ export default {
 }
 </script>
 
+<style scoped>
+    p{
+        color: red;
+    }
+</style>
+
