@@ -1,44 +1,25 @@
 <template>
-<FormVue> 
-   <template v-slot:help>
-This is Some Help Text
-</template> 
-<template v-slot:fields>
-    <input type="text" name="" id="" placeholder="Name">
-    <input type="email" name="" id="" placeholder="Email">
-    <input type="password" name="" id="" placeholder="Password">
-</template>
-   <template v-slot:button>
-    <button type="submit"> Submit </button>
-   </template>
-
-   <p> DummyText </p>
-
-</FormVue>
-<FormVue>
-   <template v-slot:help>
-This is Some Contact Text
-</template> 
-<template v-slot:fields>
-    <input type="text" name="" id="" placeholder="Name">
-    <input type="email" name="" id="" placeholder="Email">
-</template>
-   <template v-slot:buttons>
-    <button type="submit"> Submit </button>
-   </template>
-  </FormVue>
+  <select name="" id="" v-model="componentName">
+    <option value="Home">Home</option>
+    <option value="About">About</option>
+  </select>
+  <component :is="componentName">  </component>
 </template>
 
 <script>
-import FormVue from "./components/form.vue"
- export default {
-   name: 'App', 
-   components: {
-     FormVue 
-    }
-  };
-   
-
-   
+import About from "./components/about.vue";
+import Home from "./components/Home.vue"
+export default {
+name: "App" , 
+components:{
+  About , 
+  Home
+} , 
+data(){
+  return{
+    componentName: "Home"
+  }
+}
+}
 </script>
- 
+
