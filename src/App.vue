@@ -1,5 +1,6 @@
 <template>
-    <h1> Hello Vue JS </h1>
+    <h1> {{ title }} </h1>
+    <a :href="link"> Go To Vue Js </a>
 </template>
 
 <script>
@@ -9,7 +10,8 @@ name: "App" ,
  
 data(){
   return{
-    
+    title: 'This is the page Title',
+    link: 'https://vuejs.org'
   }
 }
 }
