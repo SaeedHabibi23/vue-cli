@@ -1,11 +1,17 @@
 <template>
-    <h1> {{ title }} </h1>
-    <a :href="link"> Go To Vue Js </a>
-    <div>
-      {{ getText() }}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-">
+          <div class="mt-3">
+            <button  @click="actionbutton" class="btn btn-primary"> Increment </button>
+            <button @click="decrement()" class="btn btn-danger"> Decrement </button>
+            <div>
+              <h2> {{ count }} </h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    {{ getNotherText() }}
 </template>
 
 <script>
@@ -14,20 +20,18 @@ export default {
   name: "App",
   data() {
     return {
-      title: 'This is the page Title',
-      link: 'https://vuejs.org',
-      text1: 'Hello Vue',
-      text2: 'Hello React'
+      count: 0
     }
   },
-  methods: {
-    getText() {
-      return this.text1;
-    },
-    getNotherText() {
-      return "React Course Learn";
+  methods:{
+    actionbutton(){
+      this.count++;
+    }
+    , decrement(){
+      this.count--;
     }
   }
+ 
 }
 
 </script>
