@@ -10,6 +10,19 @@
             </div>
           </div>
         </div>
+        <div class="mt-3">
+          <div class="form-group">
+             <label for=""> First Number </label>
+            <input type="number" v-model="firstNumber" class="form-control">
+
+            <label for=""> Second Number </label>
+            <input type="number" v-model="secondNumber" class="form-control">
+
+          
+
+          </div>
+        <p>Result: {{ sum }}</p>
+        </div>
       </div>
     </div>
 </template>
@@ -20,7 +33,9 @@ export default {
   name: "App",
   data() {
     return {
-      count: 0
+      count: 0,
+       firstNumber: 0,
+    secondNumber: 0
     }
   },
   methods:{
@@ -29,6 +44,12 @@ export default {
     }
     , decrement(){
       this.count--;
+    },
+ 
+  },
+   computed: {
+    sum: function() {
+      return parseInt(this.firstNumber) + parseInt(this.secondNumber);
     }
   }
  
