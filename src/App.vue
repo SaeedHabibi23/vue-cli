@@ -23,6 +23,14 @@
           </div>
         <p>Result: {{ sum }}</p>
         </div>
+
+        <div>
+          <form action=""  v-on:submit.prevent="submitForm">
+            <input type="text" class="form-control">
+            <button class="btn btn-info mt-3"> Submit Form </button>
+          </form>
+
+          </div>
       </div>
     </div>
 </template>
@@ -45,6 +53,10 @@ export default {
     , decrement(){
       this.count--;
     },
+    submitForm(){
+      // event.preventDefault()
+      alert('Submited');
+    }
  
   },
    computed: {
