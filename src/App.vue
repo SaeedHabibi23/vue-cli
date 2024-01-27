@@ -26,12 +26,17 @@
 
         <div>
           <form action=""  v-on:submit.prevent="submitForm">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"
+            v-model="name">
             <button class="btn btn-info mt-3"> Submit Form </button>
           </form>
 
           </div>
+          <div>
+            Your Name is : {{ name }}
+          </div>
       </div>
+
     </div>
 </template>
 
@@ -43,7 +48,8 @@ export default {
     return {
       count: 0,
        firstNumber: 0,
-    secondNumber: 0
+    secondNumber: 0,
+    name: ''
     }
   },
   methods:{
@@ -56,6 +62,9 @@ export default {
     submitForm(){
       // event.preventDefault()
       alert('Submited');
+    },
+    setName(event){
+      this.name = event.target.value
     }
  
   },
