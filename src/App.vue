@@ -52,6 +52,7 @@ export default {
     name: ''
     }
   },
+  // <!-- this is comment for methods -->
   methods:{
     actionbutton(){
       this.count++;
