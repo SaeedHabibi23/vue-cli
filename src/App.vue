@@ -33,7 +33,7 @@
 
           </div>
           <div>
-            Your Name is : {{ name }}
+            Your Name is : {{ name + 'Web Deve'}}
           </div>
       </div>
 
