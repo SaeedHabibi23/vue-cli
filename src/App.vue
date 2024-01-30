@@ -69,6 +69,7 @@ export default {
     }
  
   },
+  // computed methods
    computed: {
     sum: function() {
       return parseInt(this.firstNumber) + parseInt(this.secondNumber);
