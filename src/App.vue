@@ -33,7 +33,7 @@
 
           </div>
           <div>
-            Your Name is : {{ name + 'Web Deve'}}
+            Your Name is : {{ FullName + 'Web Deve'}}
           </div>
       </div>
 
@@ -49,7 +49,7 @@ export default {
       count: 0,
        firstNumber: 0,
     secondNumber: 0,
-    name: ''
+    name: 'saeed'
     }
   },
   // <!-- this is comment for methods -->
@@ -66,11 +66,16 @@ export default {
     },
     setName(event){
       this.name = event.target.value
-    }
+    },
+  
+
  
   },
   // computed methods
    computed: {
+    FullName(){
+      return this.name + 'Web Dev';
+    },
     sum: function() {
       return parseInt(this.firstNumber) + parseInt(this.secondNumber);
     }
