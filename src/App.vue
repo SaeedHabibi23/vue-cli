@@ -1,87 +1,47 @@
 <template>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-">
-          <div class="mt-3">
-            <button  @click="actionbutton" class="btn btn-primary"> Increment </button>
-            <button @click="decrement()" class="btn btn-danger"> Decrement </button>
-            <div>
-              <h2> {{ count }} </h2>
-            </div>
-          </div>
-        </div>
-        <div class="mt-3">
-          <div class="form-group">
-             <label for=""> First Number </label>
-            <input type="number" v-model="firstNumber" class="form-control">
-
-            <label for=""> Second Number </label>
-            <input type="number" v-model="secondNumber" class="form-control">
-
-          
-
-          </div>
-        <p>Result: {{ sum }}</p>
-        </div>
-
-        <div>
-          <form action=""  v-on:submit.prevent="submitForm">
-            <input type="text" class="form-control"
-            v-model="name">
-            <button class="btn btn-info mt-3"> Submit Form </button>
-          </form>
-
-          </div>
-          <div>
-            Your Name is : {{ FullName + 'Web Deve'}}
-          </div>
-      </div>
-
+  <div class="container">
+    <div class="d-flex flex-column">
+      <div class="box" :style="{backgroundColor: BoxAselected ? 'red' : '#fff'}" @click="onBoxSelected('A')"></div>
+      <div class="box" :style="{backgroundColor: BoxBselected ? 'blue' : '#fff'}" @click="onBoxSelected('B')"></div>
+      <div class="box" :style="{backgroundColor: BoxCselected ? 'green' : '#fff'}" @click="onBoxSelected('C')"></div>
     </div>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: "App",
   data() {
     return {
-      count: 0,
-       firstNumber: 0,
-    secondNumber: 0,
-    name: 'saeed'
-    }
+      BoxAselected: false,
+      BoxBselected: false,
+      BoxCselected: false,
+    };
   },
-  // <!-- this is comment for methods -->
-  methods:{
-    actionbutton(){
-      this.count++;
-    }
-    , decrement(){
-      this.count--;
+  methods: {
+    onBoxSelected(box) {
+      if (box === 'A') {
+        this.BoxAselected = true;
+        this.BoxBselected = false;
+        this.BoxCselected = false;
+      } else if (box === 'B') {
+        this.BoxAselected = false;
+        this.BoxBselected = true;
+        this.BoxCselected = false;
+      } else {
+        this.BoxAselected = false;
+        this.BoxBselected = false;
+        this.BoxCselected = true;
+      }
     },
-    submitForm(){
-      // event.preventDefault()
-      alert('Submited');
-    },
-    setName(event){
-      this.name = event.target.value
-    },
-  
-
- 
   },
-  // computed methods
-   computed: {
-    FullName(){
-      return this.name + 'Web Dev';
-    },
-    sum: function() {
-      return parseInt(this.firstNumber) + parseInt(this.secondNumber);
-    }
-  }
- 
-}
-
+};
 </script>
 
+<style>
+.box {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #000;
+  margin: 3rem;
+}
+</style>
